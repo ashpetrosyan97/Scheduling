@@ -1,0 +1,33 @@
+#table-container {
+  width: available;
+
+  table {
+    width: 100%;
+
+    th {
+      font-size: 16px;
+    }
+
+    td {
+      text-transform: capitalize;
+      font-size: 15px;
+    }
+  }
+}
+
+.add-btn {
+  margin: 10px;
+  float: right;
+}
+
+.done {
+  color: green !important;
+}
+
+.expired {
+  color: red !important;
+}
+
+.pending {
+  color: blueviolet !important;
+}

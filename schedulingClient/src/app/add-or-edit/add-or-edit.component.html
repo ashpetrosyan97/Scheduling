@@ -1,0 +1,74 @@
+<h2 mat-dialog-title style="text-align: center;text-transform: capitalize">{{modalTitle}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="createUpdateForm" (submit)="Submit()">
+        <table class="full-width">
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Title" formControlName="title">
+                        <button mat-button *ngIf="createUpdateForm.controls['title'].value"
+                                matSuffix mat-icon-button
+                                (click)="createUpdateForm.controls['title'].patchValue('')">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-placeholder>DateTime</mat-placeholder>
+                        <mat-datetimepicker-toggle [for]="datetimePicker" matSuffix></mat-datetimepicker-toggle>
+                        <mat-datetimepicker #datetimePicker type="datetime" mode="auto" openOnFocus="true"
+                                            timeInterval="5"></mat-datetimepicker>
+                        <input matInput formControlName="date" [matDatetimepicker]="datetimePicker"
+                               required autocomplete="false">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Place" formControlName="place">
+                        <button mat-button *ngIf="createUpdateForm.controls['place'].value"
+                                matSuffix mat-icon-button
+                                (click)="createUpdateForm.controls['place'].patchValue('')">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Address" formControlName="address">
+                        <button mat-button *ngIf="createUpdateForm.controls['address'].value"
+                                matSuffix mat-icon-button
+                                (click)="createUpdateForm.controls['address'].patchValue('')">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <label>
+                            <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                        </label>
+                        <button mat-button *ngIf="createUpdateForm.controls['description'].value"
+                                matSuffix mat-icon-button
+                                (click)="createUpdateForm.controls['description'].patchValue('')">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button  mat-flat-button mat-ripple color="accent" [mat-dialog-close]>Cancel
+    </button>
+    <button [disabled]="!createUpdateForm.valid" (click)="Submit()" mat-flat-button mat-ripple color="warn">Ok</button>
+</mat-dialog-actions>
