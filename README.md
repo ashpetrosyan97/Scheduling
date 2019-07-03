@@ -13,7 +13,7 @@ To run this project you need
     ```sequelize db:create```   
     ```sequelize db:migrate```   
     
-###Start   
+### Start   
 1. Start server side with command    
     ```node app.js```   
 2. To start client side go to schedulingClient directory and start it with command  
